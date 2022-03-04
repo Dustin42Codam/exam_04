@@ -51,6 +51,8 @@ static void	execute_command(t_cmd *cmd)
 {
 	pid_t	pid;
 
+	if (cmd->argc == 0)
+		return ;
 	if (!strncmp(cmd->argv[0], "cd", 3) && cmd->end_of_pipe)
 		return (execute_cd(cmd));
 	pid = fork();
